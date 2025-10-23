@@ -29,6 +29,13 @@ const emailList = [
 //richiama il nodo nella dom da manipolare
 const containerlistEl = document.getElementById('containerlist')
 
+//avvia un ciclo che scorra nell'array e cicli al suo interno le email da inserire in una costante che crea i li da inserire nell'html
+emailList.forEach(email => {
+    const list_markup = document.createElement('li')
+    list_markup.textContent = email;
+    containerlistEl.append(list_markup)
+    console.log(list_markup);
+});
 
 
 
