@@ -21,6 +21,7 @@ function clearList() {
 function new_li(response) {
     const list_markup = document.createElement('li');
             list_markup.textContent = response;
+            list_markup.classList.add('list-group-item')
             containerlistEl.append(list_markup);
 }
 
@@ -36,7 +37,7 @@ function new_list_email() {
 }
 
 buttonEl.addEventListener('click', () => {
-    clearList()
+    clearList();
     new_list_email();
 });
 
