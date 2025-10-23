@@ -18,16 +18,19 @@ function clearList() {
     containerlistEl.innerHTML = '';
 }
 
+function new_li(response) {
+    const list_markup = document.createElement('li');
+            list_markup.textContent = response;
+            containerlistEl.append(list_markup);
+}
+
 function new_list_email() {
     for (let i = 0; i < 10; i++) {
         fetch('https://flynn.boolean.careers/exercises/api/random/mail')
         .then(res => res.json())
         .then(data => {
             const { success, response } = data;
-            const list_markup = document.createElement('li');
-            list_markup.textContent = response;
-            containerlistEl.append(list_markup);
-            console.log(list_markup);
+            new_li(response)
         });
     }
 }
